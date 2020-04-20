@@ -1,4 +1,4 @@
-import Layout from "@/components/layout";
+import Layout from "@/components/Layout";
 import { Tabs } from "antd";
 import { RadarChartOutlined, HeatMapOutlined } from "@ant-design/icons";
 

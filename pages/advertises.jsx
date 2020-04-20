@@ -1,16 +1,16 @@
 import { Divider } from "antd";
-import Layout from "../components/layout";
-import SearchForm from "../components/advertises/SearchForm";
-import AdvertisesTable from "../components/advertises/AdvertisesTable";
-import ExpandButton from "../components/ExpandButton";
-import EditForm from "../components/advertises/EditForm";
+import Layout from "@/components/Layout";
+import SearchForm from "@/components/advertises/SearchForm";
+import AdvertisesTable from "@/components/advertises/AdvertisesTable";
+import ExpandButton from "@/components/ExpandButton";
+import EditForm from "@/components/advertises/EditForm";
 
 import {
   queryAdvertiseList,
   updateAdvertise,
   createAdvertise,
   deleteAdvertise,
-} from "../api/advertise";
+} from "@/api/advertise";
 import { useState, useEffect, useRef } from "react";
 
 export default () => {
@@ -37,7 +37,7 @@ export default () => {
 
   /**
    * 查询方法
-   * ..param {*} value 查询条件
+   * @param {*} value 查询条件
    */
 
   const handleSearch = (value) => {
@@ -46,8 +46,8 @@ export default () => {
 
   /**
    * 开关广告函数
-   * ..param {*} id 广告条目id
-   * ..param {*} value 启用状态
+   * @param {*} id 广告条目id
+   * @param {*} value 启用状态
    */
   const handleSwitch = (_id, value) => {
     updateAdvertise({ _id, enable: value }).then((res) => {

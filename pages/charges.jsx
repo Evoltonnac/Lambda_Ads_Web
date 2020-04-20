@@ -1,5 +1,5 @@
 import { Divider } from "antd";
-import Layout from "@/components/layout";
+import Layout from "@/components/Layout";
 import SearchForm from "@/components/charges/SearchForm";
 import ChargesTable from "@/components/charges/ChargesTable";
 import ExpandButton from "@/components/ExpandButton";
