@@ -1,0 +1,14 @@
+service: lambdaAdsWeb
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: ap-southeast-1
+  memorySize: 512
+
+plugins:
+  - serverless-nextjs-plugin
+
+package:
+  exclude:
+    - ./**
