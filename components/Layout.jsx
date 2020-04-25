@@ -6,6 +6,7 @@ import {
   GoldOutlined,
   AreaChartOutlined,
   SettingOutlined,
+  DesktopOutlined,
 } from "@ant-design/icons";
 import { withRouter } from "next/router";
 import Link from "next/link";
@@ -16,6 +17,7 @@ const menuList = [
   { pathname: "apps", title: "应用管理", icon: <AppstoreOutlined /> },
   { pathname: "statistics", title: "流量统计", icon: <AreaChartOutlined /> },
   { pathname: "bills", title: "账单结算", icon: <MoneyCollectOutlined /> },
+  { pathname: "examples", title: "投放示例", icon: <DesktopOutlined /> },
 ];
 
 const Sider = ({ router }) => {
