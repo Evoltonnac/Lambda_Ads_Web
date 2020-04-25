@@ -20,7 +20,7 @@ export default () => {
   }, [month]);
 
   function disabledDate(current) {
-    return current && current > moment().endOf("month").subtract("month", 1);
+    return current && current > moment().endOf("month");
   }
 
   return (
