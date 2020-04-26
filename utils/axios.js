@@ -6,8 +6,8 @@ import {
 import router from 'next/router'
 
 const instance = axios.create({
-  baseURL: 'https://h39wdt6zjf.execute-api.ap-southeast-1.amazonaws.com/dev',
-  // baseURL: 'http://localhost:13000',
+  // baseURL: 'https://h39wdt6zjf.execute-api.ap-southeast-1.amazonaws.com/dev',
+  baseURL: 'http://localhost:13000',
   timeout: 10000,
 })
 
