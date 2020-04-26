@@ -7,11 +7,12 @@ const viewer = {
   environment: ['web', 'desktop'],
 }
 
-export const requestAd = () => {
+export const requestAd = (data) => {
   return axios.post('/public/serverlessAds', {
     appId,
     secret,
-    viewer
+    viewer,
+    ...data
   })
 }
 
