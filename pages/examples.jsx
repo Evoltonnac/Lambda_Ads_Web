@@ -1,19 +1,24 @@
 import Layout from "@/components/Layout";
 import { Row, Col, Card } from "antd";
-import { ViewBanner, FocusBanner } from "@/components/adExamples";
+import { ViewBanner, FocusBanner, ClickBanner } from "@/components/adExamples";
 
 export default () => {
   return (
     <Layout>
       <Row gutter={16}>
         <Col span={12}>
-          <Card title="view模型广告示例" bordered={false}>
+          <Card title="View模型广告示例" bordered={false}>
             <ViewBanner />
           </Card>
         </Col>
         <Col span={12}>
-          <Card title="focus模型广告示例" bordered={false}>
+          <Card title="Focus模型广告示例" bordered={false}>
             <FocusBanner />
+          </Card>
+        </Col>
+        <Col span={12}>
+          <Card title="Click模型广告示例" bordered={false}>
+            <ClickBanner />
           </Card>
         </Col>
       </Row>

@@ -18,22 +18,27 @@ export const requestAd = (data) => {
 
 // 事件触发类
 export class AdTrigger {
-  constructor(nextUrl) {
-    this.next = nextUrl
-    this.current = ''
-    this.loaded = false
-    this.focus = false
-    this.view = false
+  constructor(nextUrl, {
+    triggerCallback
+  } = {}) {
+    this.next = nextUrl // 触发器地址
+    this.events = ['load']
+    this.loaded = false // 已加载完成
+    this.focus = false // 正处于焦点
+    this.view = false // 已观看
+    this.triggerCallback = triggerCallback || (() => {}) //触发事件的回调
   }
 
   triggerEvent(event) {
-    if (this.current === event) return
-    else this.current = event
+    let top = this.events.length - 1
+    if (this.events[top] === event) return
     if (event === 'loaded' && this.loaded) return
     if (event === 'focus' && this.focus) return
     if (event === 'blur' && !this.focus) return
     if (event === 'view' && this.view) return
     if (this.next) {
+      this.events.push(event)
+      this.triggerCallback(this.events.slice())
       triggerEventApi(this.next, event).then(res => {
         switch (event) {
           case "loaded":
@@ -51,8 +56,8 @@ export class AdTrigger {
           default:
             ;
         }
-      }).finally(() => {
-        this.current = ''
+      }, reject => {
+        this.events.splice(top + 1, 1)
       })
     }
   }
