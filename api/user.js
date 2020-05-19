@@ -18,5 +18,5 @@ export const login = (data) => {
 }
 
 export const register = (data) => {
-  return axios.post('/users/register', data)
+  return axios.post('/users/registry', data)
 }
